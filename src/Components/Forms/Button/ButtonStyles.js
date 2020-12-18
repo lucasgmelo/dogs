@@ -6,6 +6,7 @@ const Click = styled.button`
     font-family: var(--type-first);
 
     cursor: ${(props) => props.disabled ? 'wait' : 'pointer'};
+    opacity: ${(props) => props.disabled ? 0.5 : 1};
 
     border: none;
     border-radius: 0.4rem;
@@ -20,7 +21,6 @@ const Click = styled.button`
 
     transition: 0.1s;
 
-    opacity: ${(props) => props.disabled ? 0.5 : 1};
   }
   &:hover {
     outline: none;

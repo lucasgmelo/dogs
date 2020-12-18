@@ -25,7 +25,7 @@ const LoginForm = () => {
         })
     }
 
-    const [isDisabled, setIsDisabled] = useState(true);
+    const [isDisabled, setIsDisabled] = useState();
 
     return (
         <section>
@@ -33,7 +33,7 @@ const LoginForm = () => {
             <form action="" onSubmit={handleSubmit}> 
                 <Input label='Usuário' type='text' name='username'/>
                 <Input label='Senha' type='password' name='password'/>
-                <Button disabled={isDisabled} childrens='Enviar'></Button>        
+                <Button childrens='Enviar'></Button>        
             </form>
             <Link to="/login/create" >Cadastro</Link>
         </section>
