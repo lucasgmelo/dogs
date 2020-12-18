@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
+import Input from '../Forms/Input/Input';
+import Button from '../Forms/Button/Button';
+
 
 const LoginForm = () => {
 
@@ -8,35 +11,27 @@ const LoginForm = () => {
 
     function handleSubmit (event) {
         event.preventDefault();
-        fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
-            method: 'POST',
-            headers: {
-                ContentType: 'application-json'
-            },
-            body: JSON.stringify({username, password}),
-        }).then(response => {
-            console.log(response);
-            return response.json();
-        }).then(json => {
-            console.log(json);
-        })
+        // fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
+        //     method: 'POST',
+        //     headers: {
+        //         ContentType: 'application-json'
+        //     },
+        //     body: JSON.stringify({username, password}),
+        // }).then(response => {
+        //     console.log(response);
+        //     return response.json();
+        // }).then(json => {
+        //     console.log(json);
+        // })
     }
 
     return (
         <section>
             <h1>Login</h1>
             <form action="" onSubmit={handleSubmit}> 
-                <input type="text" 
-                value={username}
-                onChange={({target})=>{
-                    setUsername(target.value);
-                }} />
-                <input type="password" 
-                value={password}
-                onChange={({target})=>{
-                    setPassword(target.value);
-                }} />
-                <button>Enviar</button>
+                <Input label='Usuário' type='text' name='username'/>
+                <Input label='Senha' type='password' name='password'/>
+                <Button>Enviar</Button>
             </form>
             <Link to="/login/create" >Cadastro</Link>
         </section>

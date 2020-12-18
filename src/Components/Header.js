@@ -4,7 +4,7 @@ import {
     Nav,
     Logo,
     Login
-} from './Header_styles'
+} from './MainStyles'
 import { Link } from 'react-router-dom';
 import { ReactComponent as Dogs } from '../Assets/dogs.svg';
 import { ReactComponent as User } from '../Assets/usuario.svg';

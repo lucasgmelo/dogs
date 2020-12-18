@@ -1,7 +1,7 @@
 import React from 'react'
 import {
 
-} from './Footer_styles'
+} from './MainStyles'
 
 const Footer = () => {
     return (
