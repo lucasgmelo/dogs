@@ -3,8 +3,12 @@ import {
 
 } from './ButtonStyles';
 
-const Button = () => {
-    return <button/>
+const Button = ({textBtn}) => {
+    return (
+        <div>
+            <button>{textBtn}</button>
+        </div>
+    )
 }
 
 export default Button
