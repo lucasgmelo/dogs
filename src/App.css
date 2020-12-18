@@ -4,6 +4,7 @@
 
 body {
   padding: 0;
+  padding-top: 4rem;
   margin: 0;
   --type-first: Helvetica, Arial, sans-serif;
   --type-second: "Spectral", Georgia;
@@ -44,4 +45,12 @@ button, input {
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
+}
+
+.user {
+  display: inline-block;
+  align-items: center;
+  width: 14px;
+  height: 17px;
+  margin-left: 0.5rem;
 }

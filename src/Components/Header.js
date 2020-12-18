@@ -3,10 +3,11 @@ import {
     Head,
     Nav,
     Logo,
-    Login,
+    Login
 } from './Header_styles'
 import { Link } from 'react-router-dom';
 import { ReactComponent as Dogs } from '../Assets/dogs.svg';
+import { ReactComponent as User } from '../Assets/usuario.svg';
 
 
 const Header = () => {
@@ -21,6 +22,7 @@ const Header = () => {
                 <Link to="/login">
                     <Login>
                         Login / Criar
+                        <User className="user" />
                     </Login>
                     </Link>
 
