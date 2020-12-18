@@ -1,12 +1,12 @@
 import React from 'react'
 import { 
+    Click
+    } from './ButtonStyles';
 
-} from './ButtonStyles';
-
-const Button = ({textBtn}) => {
+const Button = ({childrens}) => {
     return (
         <div>
-            <button>{textBtn}</button>
+            <Click>{childrens}</Click>
         </div>
     )
 }
