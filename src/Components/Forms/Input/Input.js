@@ -1,13 +1,15 @@
 import React from 'react'
 import { 
-
+    Wrapper,
+    Field,
+    Label,
 } from './InputStyles'
 
 const Input = ( {label, type, name} ) => {
-    return <div>
-        <label htmlFor={name}>{label}</label>
-         <input id={name} name={name} type={type} />
-        </div> 
+    return <Wrapper>
+        <Label htmlFor={name}>{label}</Label>
+         <Field id={name} name={name} type={type} />
+        </Wrapper> 
 }
 
 export default Input

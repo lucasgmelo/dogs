@@ -6,7 +6,7 @@ import {
     
     const Button = ({childrens}) => {
         
-        const [isDisabled, setIsDisabled] = useState(true);
+        const [isDisabled, setIsDisabled] = useState(false);
 
     return (
         <div>
