@@ -38,9 +38,16 @@ import styled from 'styled-components';
         padding-bottom: 0.5rem;
     `;
 
+    const Error = styled.p`
+        font-size: 0.875rem;
+        color: #f31;
+        margin-top: .25rem;
+    `;
+
 export {
     Wrapper,
     Field,
     Label,
+    Error,
 
 }
