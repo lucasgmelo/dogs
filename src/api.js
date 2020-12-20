@@ -21,7 +21,7 @@ export function TOKEN_VALIDATE_POST(token){
             headers: {
                 'Authorization': 'Bearer ' + token,
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(token)
         },
     };
 }
@@ -34,7 +34,7 @@ export function USER_GET(token){
             headers: {
                 'Authorization': 'Bearer ' + token,
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(token)
         },
     };
 }
