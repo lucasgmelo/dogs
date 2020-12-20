@@ -10,10 +10,13 @@ const Head = styled.header`
 `;
 
 const Nav = styled.nav`
+    width: 100%;
+    max-width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 4rem;
+    margin: 0;
 `;
 
 const Logo = styled.div`
