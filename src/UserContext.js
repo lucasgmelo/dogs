@@ -20,7 +20,7 @@ export const UserStorage = ({children}) => {
     }
 
     async function userLogin(username, password) {
-        const {url, options} = TOKEN_POST({username, password});
+        const { url, options } = TOKEN_POST({username, password});
         const tokenRes = await fetch(url, options);
         const token = await tokenRes.json();
         window.localStorage.setItem('token', token);
@@ -28,7 +28,7 @@ export const UserStorage = ({children}) => {
     }
 
     return (
-        <UserContext.Provider value={{userLogin}} >{children}</UserContext.Provider>
+        <UserContext.Provider value={{userLogin, data}} >{children}</UserContext.Provider>
     )
 }
 
