@@ -4,13 +4,11 @@ import {
     } from './ButtonStyles';
 
     
-    const Button = ({childrens}) => {
-        
-        const [isDisabled, setIsDisabled] = useState(false);
+    const Button = ({childrens, loading}) => {
 
     return (
         <div>
-            <Click disabled={isDisabled}>{childrens}</Click>
+            {loading ? <Click disabled={true}>{childrens}</Click> : <Click disabled={false}>{childrens}</Click>}
         </div>
     )
 }

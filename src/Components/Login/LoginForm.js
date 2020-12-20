@@ -1,15 +1,16 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Input from "../Forms/Input/Input";
 import Button from "../Forms/Button/Button";
 import useForm from "../../Hooks/useForm";
-import { UserContext } from '../../UserContext'
+import { UserContext } from '../../UserContext';
+import { Error } from "../Forms/Input/InputStyles";
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  const {userLogin} = React.useContext(UserContext);
+  const {userLogin, error, loading, setLoading} = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -27,7 +28,10 @@ const LoginForm = () => {
 
         <Input label="Senha" type="password" name="password" {...password} />
 
-        <Button childrens="Enviar" />
+        {/* {setLoading(false)} */}
+        {loading ? <Button loading={true} childrens="Carregando..." /> : <Button loading={false} childrens="Entrar"/>}
+        
+        {error && <Error>{error}</Error>}
       </form>
       <Link to="/login/create">Cadastro</Link>
     </section>

@@ -6,7 +6,7 @@ import { ReactComponent as User } from "../Assets/usuario.svg";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
-  const { data } = useContext(UserContext);
+  const { data, userLogout } = useContext(UserContext);
 
   return (
     <Head>
@@ -20,6 +20,7 @@ const Header = () => {
           <Link to="/conta">
           <Login>
             {data.nome}
+          <button onClick={userLogout}>Sair</button>
             <User className="user" />
           </Login>
         </Link>
