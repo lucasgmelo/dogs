@@ -29,7 +29,7 @@
   margin-bottom: 2rem;
 }
 
-.click {
+.button {
   font-size: 1rem;
   font-family: var(--type-first);
 
@@ -49,13 +49,13 @@
   transition: 0.1s;
 }
 
-.click:hover,
-.click:focus {
+.button:hover,
+.button:focus {
   outline: none;
   box-shadow: 0 0 0 1px #fea, 0 0 0 2px #fb1;
 }
 
-.click:disabled {
+.button:disabled {
   opacity: 0.5;
   cursor: wait;
 }

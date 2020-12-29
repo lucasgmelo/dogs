@@ -45,7 +45,8 @@ const LoginForm = () => {
         <Subtitle>Cadastre-se</Subtitle>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
       </div>
-      <Link classname={style.click} to="/login/create">Cadastro</Link>
+      
+      <Link to="/login/create" className={style.button}>Cadastro</Link>
     </section>
   );
 };
