@@ -30,10 +30,6 @@ const Click = styled.button`
     outline: none;
     box-shadow: 0 0 0 1px #fea, 0 0 0 2px #fb1;
   }
-  &:disabled{
-      opacity: 0.5;
-      cursor: wait;
-  }
 `;
 
 export { Click };
