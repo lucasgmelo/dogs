@@ -1,7 +1,7 @@
 import React from 'react';
 import URL from './URL';
 
-const PhotoGet = () => {
+const PHOTO_GET = () => {
   const [query, setQuery] = React.useState('');
 
   function handleSubmit(event) {
@@ -31,4 +31,4 @@ const PhotoGet = () => {
   );
 };
 
-export default PhotoGet;
+export default PHOTO_GET;

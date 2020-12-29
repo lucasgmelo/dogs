@@ -1,7 +1,7 @@
 import React from 'react';
 import URL from './URL';
 
-const UserPost = () => {
+const USER_POST = () => {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [email, setEmail] = React.useState('');
@@ -55,4 +55,4 @@ const UserPost = () => {
   );
 };
 
-export default UserPost;
+export default USER_POST;

@@ -1,7 +1,7 @@
 import React from 'react';
 import URL from './URL';
 
-const TokenPost = () => {
+const TOKEN_POST = () => {
   const [username, setUsername] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [token, setToken] = React.useState('');
@@ -50,4 +50,4 @@ const TokenPost = () => {
   );
 };
 
-export default TokenPost;
+export default TOKEN_POST;

@@ -1,7 +1,7 @@
 import React from 'react';
 import URL from './URL';
 
-const PhotoPost = () => {
+const PHOTO_POST = () => {
   const [token, setToken] = React.useState('');
   const [nome, setNome] = React.useState('');
   const [peso, setPeso] = React.useState('');
@@ -67,4 +67,4 @@ const PhotoPost = () => {
   );
 };
 
-export default PhotoPost;
+export default PHOTO_POST;
