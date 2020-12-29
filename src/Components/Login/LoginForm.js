@@ -4,7 +4,10 @@ import Input from "../Forms/Input/Input";
 import Button from "../Forms/Button/Button";
 import useForm from "../../Hooks/useForm";
 import { UserContext } from '../../UserContext';
-import { Error } from "../Forms/Input/InputStyles";
+import {
+  Title,
+} from "../MainStyles"
+import Helper from "../Helper/Helper";
 
 const LoginForm = () => {
   const username = useForm();
@@ -21,8 +24,8 @@ const LoginForm = () => {
   }
 
   return (
-    <section>
-      <h1>Login</h1>
+    <section className="animeLeft">
+      <Title>Login</Title>
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
 
@@ -31,7 +34,7 @@ const LoginForm = () => {
         {/* {setLoading(false)} */}
         {loading ? <Button loading={true} childrens="Carregando..." /> : <Button loading={false} childrens="Entrar"/>}
         
-        {error && <Error>{error}</Error>}
+        <Helper error={error} />
       </form>
       <Link to="/login/create">Cadastro</Link>
     </section>
