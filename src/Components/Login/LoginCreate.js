@@ -1,10 +1,12 @@
 import React from 'react'
+import { Title } from '../MainStyles'
 
 const LoginCreate = () => {
     return (
-        <div>
-            create
-        </div>
+        <section className="animeLeft">
+            <Title>Cadastre-se</Title>
+            <form onSubmit={handleSubmit}></form>
+        </section>
     )
 }
 
