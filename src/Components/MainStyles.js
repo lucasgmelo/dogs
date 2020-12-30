@@ -25,6 +25,7 @@ const Logo = styled.div`
 
 const Login = styled.a`
         color: #333;
+        display: flex;
 `;
 
 const Title = styled.h1`
