@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useState} from 'react';
 import URL from './URL';
 
-const USER_POST = () => {
-  const [username, setUsername] = React.useState('');
-  const [password, setPassword] = React.useState('');
-  const [email, setEmail] = React.useState('');
+const UserPost = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
@@ -55,4 +55,4 @@ const USER_POST = () => {
   );
 };
 
-export default USER_POST;
+export default UserPost;
