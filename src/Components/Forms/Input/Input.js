@@ -1,9 +1,6 @@
 import React from "react";
 import Helper from "../../Helper/Helper";
-import { Wrapper, 
-         Field, 
-         Label,
-        } from "./InputStyles";
+import { Wrapper, Field, Label } from "./InputStyles";
 
 const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
   return (
@@ -17,7 +14,7 @@ const Input = ({ label, type, name, value, onChange, error, onBlur }) => {
         onChange={onChange}
         onBlur={onBlur}
       />
-      <Helper error={error}/>
+      <Helper error={error} />
     </Wrapper>
   );
 };

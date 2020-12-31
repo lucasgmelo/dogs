@@ -10,31 +10,35 @@ import useMedia from "../../Hooks/useMedia";
 
 const UserHeaderNav = () => {
   const { userLogout } = useContext(UserContext);
-  const mobile = useMedia('(max-width:40rem)');
+  const mobile = useMedia("(max-width:40rem)");
   const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
     <>
-    {mobile && <button aria-label="Menu" onClick={() => setMobileMenu(!mobileMenu)}> </button>}
-    
-    <nav className={styles.nav}>
-      <NavLink to="/conta" end activeClassName={styles.active}>
-        <Feed />
-        {mobile && 'Minhas Fotos'}
-      </NavLink>
-      <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
-        <Estatísticas />
-        {mobile && 'Estatísticas'}
-      </NavLink>
-      <NavLink to="/conta/post" activeClassName={styles.active}>
-        <Photo />
-        {mobile && 'Adicionar Foto'}
-      </NavLink>
-      <button onClick={userLogout}>
-        <Sair />
-        {mobile && 'Sair'}
-      </button>
-    </nav>
+      {mobile && (
+        <button aria-label="Menu" onClick={() => setMobileMenu(!mobileMenu)}>
+          {" "}
+        </button>
+      )}
+
+      <nav className={styles.nav}>
+        <NavLink to="/conta" end activeClassName={styles.active}>
+          <Feed />
+          {mobile && "Minhas Fotos"}
+        </NavLink>
+        <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
+          <Estatísticas />
+          {mobile && "Estatísticas"}
+        </NavLink>
+        <NavLink to="/conta/post" activeClassName={styles.active}>
+          <Photo />
+          {mobile && "Adicionar Foto"}
+        </NavLink>
+        <button onClick={userLogout}>
+          <Sair />
+          {mobile && "Sair"}
+        </button>
+      </nav>
     </>
   );
 };

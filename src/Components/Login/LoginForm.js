@@ -31,7 +31,7 @@ const LoginForm = () => {
       <form className={style.form} onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...username} />
         <Input label="Senha" type="password" name="password" {...password} />
- 
+
         {loading ? (
           <Button loading={true} childrens="Carregando..." />
         ) : (
@@ -40,13 +40,17 @@ const LoginForm = () => {
 
         <Helper error={error} />
       </form>
-      <Link className={style.lost} to="/login/lost">Perdeu a senha?</Link>
+      <Link className={style.lost} to="/login/lost">
+        Perdeu a senha?
+      </Link>
       <div className={style.register}>
         <Subtitle>Cadastre-se</Subtitle>
         <p>Ainda não possui conta? Cadastre-se no site.</p>
       </div>
-      
-      <Link to="/login/create" className={style.button}>Cadastro</Link>
+
+      <Link to="/login/create" className={style.button}>
+        Cadastro
+      </Link>
     </section>
   );
 };

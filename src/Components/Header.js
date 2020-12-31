@@ -18,11 +18,11 @@ const Header = () => {
         </Link>
         {data ? (
           <Link to="/conta">
-          <Login>
-            {data.nome}
-            <User className="user" />
-          </Login>
-        </Link>
+            <Login>
+              {data.nome}
+              <User className="user" />
+            </Login>
+          </Link>
         ) : (
           <Link to="/login">
             <Login>
