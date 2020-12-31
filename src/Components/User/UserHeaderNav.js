@@ -6,12 +6,17 @@ import { ReactComponent as Feed } from "../../Assets/feed.svg";
 import { ReactComponent as Estatísticas } from "../../Assets/estatisticas.svg";
 import { ReactComponent as Photo } from "../../Assets/adicionar.svg";
 import { ReactComponent as Sair } from "../../Assets/sair.svg";
+import useMedia from "../../Hooks/useMedia";
 
 const UserHeaderNav = () => {
-  const [mobile, setMobile] = useState(null);
   const { userLogout } = useContext(UserContext);
+  const mobile = useMedia('(max-width:40rem)');
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   return (
+    <>
+    {mobile && <button aria-label="Menu" onClick={() => setMobileMenu(!mobileMenu)}> </button>}
+    
     <nav className={styles.nav}>
       <NavLink to="/conta" end activeClassName={styles.active}>
         <Feed />
@@ -28,9 +33,9 @@ const UserHeaderNav = () => {
       <button onClick={userLogout}>
         <Sair />
         {mobile && 'Sair'}
-
       </button>
     </nav>
+    </>
   );
 };
 
