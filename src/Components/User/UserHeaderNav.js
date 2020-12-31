@@ -1,17 +1,37 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
-import Button from '../Forms/Button/Button'
+import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+import { UserContext } from "../../UserContext";
+import styles from "./UserHeader.module.css";
+import { ReactComponent as Feed } from "../../Assets/feed.svg";
+import { ReactComponent as Estatísticas } from "../../Assets/estatisticas.svg";
+import { ReactComponent as Photo } from "../../Assets/adicionar.svg";
+import { ReactComponent as Sair } from "../../Assets/sair.svg";
 
 const UserHeaderNav = () => {
-    return (
-        <nav>
-            <NavLink to="/conta">Minhas Fotos</NavLink>
-            <NavLink to="/conta/statistics" >Estatísticas</NavLink>
-            <NavLink to="/conta/post">Adicionar fotos</NavLink>
-            <Button childrens="Sair"/>
-            
-        </nav>
-    )
-}
+  const [mobile, setMobile] = useState(null);
+  const { userLogout } = useContext(UserContext);
 
-export default UserHeaderNav
+  return (
+    <nav className={styles.nav}>
+      <NavLink to="/conta" end activeClassName={styles.active}>
+        <Feed />
+        {mobile && 'Minhas Fotos'}
+      </NavLink>
+      <NavLink to="/conta/estatisticas" activeClassName={styles.active}>
+        <Estatísticas />
+        {mobile && 'Estatísticas'}
+      </NavLink>
+      <NavLink to="/conta/post" activeClassName={styles.active}>
+        <Photo />
+        {mobile && 'Adicionar Foto'}
+      </NavLink>
+      <button onClick={userLogout}>
+        <Sair />
+        {mobile && 'Sair'}
+
+      </button>
+    </nav>
+  );
+};
+
+export default UserHeaderNav;

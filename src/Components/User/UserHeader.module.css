@@ -1,0 +1,52 @@
+.nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.nav a,
+.nav button {
+    background: #eee;
+
+    border-radius: .2rem;
+    border: 1px solid transparent;
+
+    height: 40px;
+    width: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    transition: .1s;
+    cursor: pointer;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav button:hover,
+.nav button:focus {
+    background: white;
+    box-shadow: 0 0 0 3px #eee;
+    border-color: #333;
+    outline: none; 
+}
+
+.nav a.active {
+    background: white;
+    box-shadow: 0 0 0 3px #fea;
+    border-color: #fb1;
+}
+
+.nav a.active svg > * {
+    fill: #fb1;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    position: relative;
+}
