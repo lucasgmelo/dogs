@@ -3,7 +3,7 @@ import { Title } from "../MainStyles";
 import Input from "../Forms/Input/Input";
 import Button from "../Forms/Button/Button";
 import useForm from "../../Hooks/useForm";
-import UserPost from "../../services/USER_POST";
+import {USER_POST} from "../../services/Api";
 import { UserContext } from "../../UserContext";
 import useFetch from "../../Hooks/useFetch";
 import Helper from "../Helper/Helper";
@@ -18,7 +18,7 @@ const LoginCreate = () => {
 
   async function handleSubmit(event) {
     event.preventDefault();
-    const { url, options } = UserPost({
+    const { url, options } = USER_POST({
       username: username.value,
       email: email.value,
       password: password.value,
