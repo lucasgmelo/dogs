@@ -10,14 +10,17 @@ const FeedPhotos = () => {
     const {data, loading, error, request} = useFetch();
 
     useEffect(() => {
-       
+
         async function fetchPhotos(){
+            
             const{url, options} = PHOTOS_GET({page: 1, total: 6, user: 0});
-            const {responde, json} = await request(url, options);
+            const {response, json} = await request(url, options);
             console.log(json);
+
         }
 
         fetchPhotos();
+
     }, [request]);
 
     if(error) <Helper error={error} />
