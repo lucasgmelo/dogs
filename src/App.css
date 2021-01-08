@@ -50,6 +50,10 @@ button, input {
   margin: 0 auto;
 }
 
+.mainContainer {
+  margin-top: 4rem;
+}
+
 .user {
   display: inline-block;
   align-items: center;
