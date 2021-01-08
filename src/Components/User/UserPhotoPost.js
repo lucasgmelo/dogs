@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import styles from './UserPhotoPost.module.css'
 import Input from '../Forms/Input/Input'
 import Button from '../Forms/Button/Button'
 import useForm from '../../Hooks/useForm'
 import useFetch from '../../Hooks/useFetch'
 import {PHOTO_POST} from '../../services/Api'
+import Helper from '../Helper/Helper'
+import { useNavigate } from 'react-router-dom'
 
 
 const UserPhotoPost = () => {
@@ -13,6 +15,13 @@ const UserPhotoPost = () => {
     const idade = useForm('number');
     const [img, setImg] = useState({});
     const {data, error, loading, request} = useFetch();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+       
+    if(data) navigate('/conta')  
+
+    }, [data, navigate]);
 
 
     function handleSubmit(event){
@@ -45,12 +54,19 @@ const UserPhotoPost = () => {
                 <Input label="Idade" type="number" name="idade" {...idade}/>
                 <input className={styles.file} type="file" name="img" id="img" onChange={handleImgChange}/>
 
-                <Button childrens="enviar"/>
+                {loading ? (
+                    <Button loading={true} childrens="Enviando..." />
+                    ) : (
+                    <Button loading={false} childrens="Enviar" />
+                )}
+
+                {   error && <Helper error={error} />  }
             </form>
             <div>
-                {img.preview && <div className={styles.preview} style={{backgroundImage: 'url(`${img.preview}`)'}}>
-                    
-                    </div>}
+                {img.preview && (<div 
+                className={styles.preview} 
+                style={{ backgroundImage: `url('${img.preview}')`}} 
+                ></div>)}
             </div>
 
         </section>
